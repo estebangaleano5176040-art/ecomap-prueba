@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECOMAQ E.A.S. | Limpieza de Terrenos, Apertura de Caminos y Maquinaria Vial</title>
+  <meta name="description" content="ECOMAQ E.A.S. - Más de 5 años de experiencia en limpieza de terrenos, apertura de caminos, movimiento de suelo y mantenimiento de loteamientos en todo el Paraguay. Base en Luque, Laurelty." />
+  
+  <!-- Tipografías Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --green-primary: #2e5a27;
+      --green-dark: #1e3d19;
+      --green-light: #e9f2e7;
+      --brown-primary: #7c3a10;
+      --brown-light: #a6521b;
+      --accent-gold: #e09f3e;
+      --dark: #182216;
+      --text: #333d31;
+      --text-light: #606c5d;
+      --bg-light: #f6f8f5;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(24, 34, 22, 0.08);
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    /* BARRA SUPERIOR */
+    .topbar {
+      background-color: var(--green-dark);
+      color: var(--white);
+      font-size: 0.88rem;
+      padding: 8px 0;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topbar-info {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-info span i {
+      color: var(--accent-gold);
+      margin-right: 6px;
+    }
+
+    /* NAVEGACIÓN */
+    header {
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text span {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--green-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text small {
+      color: var(--brown-primary);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: var(--green-primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--white);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--green-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      color: var(--green-dark);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* HERO PRINCIPAL */
+    .hero {
+      position: relative;
+      min-height: 84vh;
+      display: flex;
+      align-items: center;
+      background: 
+        linear-gradient(105deg, rgba(20, 35, 18, 0.88) 0%, rgba(30, 61, 25, 0.72) 55%, rgba(124, 58, 16, 0.55) 100%),
+        url('fondo.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-badge i {
+      color: var(--accent-gold);
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #8ce97a;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 32px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 25px;
+      max-width: 580px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      color: var(--accent-gold);
+    }
+
+    .stat-item span {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--dark);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    .hero-card img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 14px;
+    }
+
+    .hero-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--green-dark);
+    }
+
+    .hero-card p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card-list {
+      text-align: left;
+      margin-bottom: 22px;
+      font-size: 0.9rem;
+    }
+
+    .hero-card-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-card-list i {
+      color: var(--green-primary);
+    }
+
+    /* SECCIONES GENERALES */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 55px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-primary);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 15px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.02rem;
+    }
+
+    /* CLIENTES / EMPRESAS QUE CONFÍAN */
+    .clients-section {
+      background: var(--white);
+      padding: 55px 0;
+      border-bottom: 1px solid #e5ebe3;
+    }
+
+    .clients-title {
+      text-align: center;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-light);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 18px;
+      align-items: center;
+    }
+
+    .client-card {
+      background: var(--bg-light);
+      border: 1px solid #e1e8df;
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+      min-height: 92px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .client-card:hover {
+      border-color: var(--green-primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Cuando agregues los logos reales, solo descomentás el <img> dentro de cada tarjeta */
+    .client-card img {
+      max-height: 55px;
+      max-width: 140px;
+      object-fit: contain;
+    }
+
+    .client-card i {
+      font-size: 1.4rem;
+      color: var(--brown-primary);
+    }
+
+    .client-card span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--green-dark);
+    }
+
+    /* SOBRE NOSOTROS, MISIÓN Y VISIÓN */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .experience-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--brown-primary);
+      color: var(--white);
+      padding: 18px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .experience-badge strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      display: block;
+      line-height: 1;
+    }
+
+    .mv-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .mv-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--green-primary);
+      box-shadow: var(--shadow);
+    }
+
+    .mv-card.vision {
+      border-left-color: var(--brown-primary);
+    }
+
+    .mv-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mv-card h3 i {
+      color: var(--green-primary);
+    }
+
+    .mv-card.vision h3 i {
+      color: var(--brown-primary);
+    }
+
+    .mv-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+    }
+
+    /* SERVICIOS */
+    .services-section {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      border: 1px solid #e4ebe2;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: var(--green-primary);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: var(--green-primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card:nth-child(even) .service-icon {
+      background: var(--brown-primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.94rem;
+    }
+
+    /* FLOTA DE MAQUINARIAS */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .fleet-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--brown-primary);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .fleet-card:nth-child(odd) {
+      border-top-color: var(--green-primary);
+    }
+
+    .fleet-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .fleet-header i {
+      font-size: 1.75rem;
+      color: var(--brown-primary);
+      background: #f9efe8;
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fleet-card:nth-child(odd) .fleet-header i {
+      color: var(--green-primary);
+      background: var(--green-light);
+    }
+
+    .fleet-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .fleet-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .fleet-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      background: var(--bg-light);
+      padding: 6px 12px;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    /* TRABAJOS REALIZADOS (PORTAFOLIO) */
+    .portfolio-section {
+      background: var(--white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+    }
+
+    .portfolio-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-light);
+      box-shadow: var(--shadow);
+      border: 1px solid #e2e8e0;
+    }
+
+    .portfolio-img {
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .portfolio-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(24, 34, 22, 0.85);
+      color: var(--white);
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .portfolio-body {
+      padding: 22px;
+    }
+
+    .portfolio-body h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-body p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* COBERTURA NACIONAL */
+    .coverage-banner {
+      background: linear-gradient(120deg, var(--green-dark) 0%, var(--green-primary) 60%, var(--brown-primary) 100%);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 50px 45px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 35px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .coverage-banner h2 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 14px;
+    }
+
+    .coverage-banner p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .coverage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .coverage-tags span {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 7px 15px;
+      border-radius: 50px;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .coverage-box {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 28px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .coverage-box i {
+      font-size: 2.6rem;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .coverage-box h3 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    /* CONTACTO Y COTIZADOR WHATSAPP */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 38px;
+      border-radius: var(--radius);
+    }
+
+    .contact-info-card h3 {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-info-card p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .contact-item i {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .contact-item span {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.92rem;
+    }
+
+    .quote-form {
+      background: var(--white);
+      padding: 38px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-form h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .quote-form > p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cfd8cc;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 45px 0 25px;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 0.84rem;
+    }
+
+    /* BOTÓN FLOTANTE DE WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: var(--white);
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* RESPONSIVE CELULARES Y TABLETS */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid,
+      .coverage-banner,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mv-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-location-dot"></i> Base Operativa: Luque - Laurelty, Paraguay</span>
+        <span><i class="fa-solid fa-map"></i> Cobertura en todo el país</span>
+      </div>
+      <div>
+        <a href="https://wa.me/595992272568" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Contacto directo: <strong>0992 272 568</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="Logo ECOMAQ E.A.S." />
+        <div class="brand-text">
+          <span>ECOMAQ</span>
+          <small>E.A.S. MAQUINARIA Y SERVICIOS</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#maquinarias">Maquinarias</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#cobertura">Cobertura</a>
+        <a href="#contacto" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> 0992 272 568
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PORTADA PRINCIPAL (HERO) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">
+          <i class="fa-solid fa-tractor"></i> +5 Años Desarrollando Terrenos y Caminos en todo el Paraguay
+        </div>
+        <h1>Potencia y precisión en <span>Limpieza de Terrenos</span> y <span>Apertura de Caminos</span></h1>
+        <p>
+          Somos especialistas en preparación de fracciones, movimiento de suelo, perfilado de calles y mantenimiento integral de loteamientos con flota propia de maquinaria vial, tractores y cuadrillas de poda.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo." target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Solicitar Presupuesto
+          </a>
+          <a href="#servicios" class="btn btn-outline">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Ver Nuestros Servicios
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>+5 Años</strong>
+            <span>De experiencia comprobada</span>
+          </div>
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Cobertura Nacional</span>
+          </div>
+          <div class="stat-item">
+            <strong>Flota Propia</strong>
+            <span>Equipos y personal calificado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="logo.png" alt="ECOMAQ E.A.S." />
+        <h3>Aliados de Loteadoras, Inmobiliarias y Productores</h3>
+        <p>Ejecutamos obras de principio a fin con cumplimiento estricto de plazos.</p>
+        <ul class="hero-card-list">
+          <li><i class="fa-solid fa-circle-check"></i> Apertura y perfilado de calles en loteamientos</li>
+          <li><i class="fa-solid fa-circle-check"></i> Limpieza pesada, destronque y desmalezado</li>
+          <li><i class="fa-solid fa-circle-check"></i> Camión tumba, motoniveladora y tractores</li>
+          <li><i class="fa-solid fa-circle-check"></i> Cuadrillas de podadores y acoples rotativos</li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          Cotizar mi Proyecto Ahora <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESAS QUE CONFÍAN EN NOSOTROS -->
+  <section id="clientes" class="clients-section">
+    <div class="container">
+      <p class="clients-title">Importantes empresas e inmobiliarias que confían en nuestro trabajo</p>
+      <div class="clients-grid">
+        <div class="client-card">
+          <!-- Cuando tengas el logo: <img src="logo-nisa.png" alt="NISA Inmobiliaria"> -->
+          <i class="fa-solid fa-building-shield"></i>
+          <span>NISA INMOBILIARIA</span>
+        </div>
+        <div class="client-card">
+          <!-- <img src="logo-paraguay-propiedades.png" alt="Paraguay Propiedades"> -->
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>PARAGUAY PROPIEDADES</span>
+        </div>
+        <div class="client-card">
+          <!-- <img src="logo-focaris.png" alt="Focaris"> -->
+          <i class="fa-solid fa-city"></i>
+          <span>FOCARIS</span>
+        </div>
+        <div class="client-card">
+          <!-- <img src="logo-jb.png" alt="JB Inmobiliaria"> -->
+          <i class="fa-solid fa-house-chimney"></i>
+          <span>JB INMOBILIARIA</span>
+        </div>
+        <div class="client-card">
+          <!-- <img src="logo-origenes.png" alt="Orígenes Inmobiliaria"> -->
+          <i class="fa-solid fa-tree-city"></i>
+          <span>ORÍGENES INMOBILIARIA</span>
+        </div>
+        <div class="client-card">
+          <!-- <img src="logo-corporacion-terrenos.png" alt="Corporación Terrenos"> -->
+          <i class="fa-solid fa-layer-group"></i>
+          <span>CORPORACIÓN TERRENOS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS, MISIÓN Y VISIÓN -->
+  <section id="nosotros">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="fondo.jpg" alt="Apertura de caminos y limpieza de loteamientos por ECOMAQ E.A.S." />
+        <div class="experience-badge">
+          <strong>+5 Años</strong>
+          <span>Transformando terrenos en proyectos listos para crecer</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-tag">Sobre ECOMAQ E.A.S.</span>
+        <h2>Soluciones viales y de limpieza territorial a la medida de cada obra</h2>
+        <p style="margin: 16px 0; color: var(--text-light);">
+          En <strong>ECOMAQ E.A.S.</strong> contamos con más de <strong>5 años de trayectoria</strong> brindando servicios integrales de preparación de suelos, apertura de calles, nivelación y mantenimiento de grandes superficies en todo el territorio nacional.
+        </p>
+        <p style="color: var(--text-light);">
+          Con base operativa en <strong>Laurelty, Luque</strong>, nos hemos consolidado como el socio estratégico de las principales empresas inmobiliarias y loteadoras del país, garantizando terrenos limpios, caminos perfectamente perfilados y entregas en tiempo y forma.
+        </p>
+
+        <div class="mv-cards">
+          <div class="mv-card">
+            <h3><i class="fa-solid fa-bullseye"></i> Nuestra Misión</h3>
+            <p>
+              Proveer servicios eficientes de limpieza de terrenos, movimiento de suelo, apertura vial y mantenimiento de propiedades mediante maquinaria confiable y personal especializado, impulsando el valor y desarrollo de los proyectos inmobiliarios, rurales y urbanos de nuestros clientes.
+            </p>
+          </div>
+
+          <div class="mv-card vision">
+            <h3><i class="fa-solid fa-eye"></i> Nuestra Visión</h3>
+            <p>
+              Ser la empresa referente a nivel nacional en servicios de maquinaria vial, preparación y mantenimiento de terrenos, reconocida por su capacidad operativa en todo el Paraguay, cumplimiento de plazos y excelencia en cada hectárea trabajada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Catálogo de Servicios</span>
+        <h2>Todo lo que tu terreno o loteamiento necesita</h2>
+        <p>Ejecutamos desde la limpieza inicial y el movimiento de suelo hasta la apertura de calles y el mantenimiento periódico de manzanas y lotes.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-tree"></i></div>
+          <h3>Limpieza de Terrenos y Destronque</h3>
+          <p>Habilitación de predios urbanos, rurales y futuras urbanizaciones. Retiro de maleza densa, árboles, troncos y preparación integral de la superficie.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-road"></i></div>
+          <h3>Apertura y Perfilado de Caminos</h3>
+          <p>Trazado, apertura, abovedado, perfilado y compactación de calles para loteamientos, caminos vecinales y accesos internos de estancias o industrias.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-mound"></i></div>
+          <h3>Movimiento de Suelo y Nivelación</h3>
+          <p>Relleno, terraplenado, desmonte, nivelación de terrenos y emparejamiento de cotas para proyectos habitacionales, comerciales o industriales.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+          <h3>Poda y Mantenimiento de Loteamientos</h3>
+          <p>Corte de pasto extensivo con acoples de tractor y terminación detallada con cuadrillas de podadores personales para mantener las fracciones impecables para la venta.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-water"></i></div>
+          <h3>Tajamares, Cunetas y Desagües</h3>
+          <p>Conformación de cunetas viales, canalización de aguas pluviales para proteger las calles abiertas y excavación de reservorios o tajamares.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-truck-Ramp-box"></i></div>
+          <h3>Provisión de Materiales y Alquiler</h3>
+          <p>Transporte y provisión de tierra de relleno, tosca, arena y piedra triturada en camión tumba, además de alquiler de equipos por hora o por proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAQUINARIAS Y EQUIPOS -->
+  <section id="maquinarias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Flota y Equipamiento</span>
+        <h2>Maquinarias y Equipos que Manejamos</h2>
+        <p>Combinamos maquinaria pesada de alto rendimiento con equipos de terminación manual para cubrir cada etapa del trabajo en campo.</p>
+      </div>
+
+      <div class="fleet-grid">
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-snowplow"></i>
+              <h3>Motoniveladora</h3>
+            </div>
+            <p>Ideal para apertura de calles, perfilado de precisión, conformación de cunetas, distribución de material y nivelación fina de caminos.</p>
+          </div>
+          <span class="fleet-tag">Vialidad y Nivelación</span>
+        </div>
+
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-tractor"></i>
+              <h3>Tractor de Alta Potencia</h3>
+            </div>
+            <p>Versatilidad y tracción para trabajos pesados en todo tipo de terreno, preparación de suelo y arrastre de implementos de gran porte.</p>
+          </div>
+          <span class="fleet-tag">Fuerza en Campo</span>
+        </div>
+
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-truck-pickup"></i>
+              <h3>Camión Tumba</h3>
+            </div>
+            <p>Transporte ágil de relleno, tosca, arena, ripio y retiro de maleza, troncos o escombros resultantes de la limpieza del predio.</p>
+          </div>
+          <span class="fleet-tag">Transporte y Relleno</span>
+        </div>
+
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-gears"></i>
+              <h3>Podadoras Acopladas al Tractor</h3>
+            </div>
+            <p>Rotativas y desmalezadoras de acople directo al tractor para el corte rápido y uniforme de grandes hectáreas y manzanas de loteamientos.</p>
+          </div>
+          <span class="fleet-tag">Alto Rendimiento por Ha</span>
+        </div>
+
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-person-digging"></i>
+              <h3>Equipos de Podadores Personales</h3>
+            </div>
+            <p>Cuadrilla equipada con desmalezadoras manuales y herramientas de poda para perfilado de bordes, esquinas, amojonamientos y zonas de detalle.</p>
+          </div>
+          <span class="fleet-tag">Terminación Detallada</span>
+        </div>
+
+        <div class="fleet-card">
+          <div>
+            <div class="fleet-header">
+              <i class="fa-solid fa-helmet-safety"></i>
+              <h3>Otros Equipos y Logística</h3>
+            </div>
+            <p>Complementamos cada frente de obra con las herramientas y maquinarias específicas que requiera la topografía y magnitud de tu proyecto.</p>
+          </div>
+          <span class="fleet-tag">Soluciones Integrales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABAJOS REALIZADOS -->
+  <section id="trabajos" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nuestro Portafolio</span>
+        <h2>Trabajos Realizados</h2>
+        <p>Conocé la calidad de terminación en nuestras aperturas de calles, desarrollos de fracciones y limpiezas integrales.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-img" style="background-image: url('fondo.jpg');">
+            <span class="portfolio-badge">Loteamientos e Inmobiliarias</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Apertura de Calles y Limpieza de Manzanas</h3>
+            <p>Trazado y perfilado de arterias internas con motoniveladora y mantenimiento integral de manzanas mediante tractor con rotativa y cuadrilla.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-img" style="background-image: linear-gradient(rgba(30,61,25,0.25), rgba(30,61,25,0.45)), url('fondo.jpg'); background-position: left center;">
+            <span class="portfolio-badge">Vialidad y Suelos</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Nivelación, Cuneteado y Mejoramiento Vial</h3>
+            <p>Conformación de pendiente, desagües laterales y compactación de caminos para garantizar el acceso permanente en días de lluvia.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-img" style="background-image: linear-gradient(rgba(124,58,16,0.25), rgba(124,58,16,0.45)), url('fondo.jpg'); background-position: right bottom;">
+            <span class="portfolio-badge">Mantenimiento Continuo</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Limpieza y Poda de Fracciones Comerciales</h3>
+            <p>Puesta a punto de terrenos para exhibición y venta junto a las principales desarrolladoras inmobiliarias del país.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONAS DE COBERTURA -->
+  <section id="cobertura">
+    <div class="container">
+      <div class="coverage-banner">
+        <div>
+          <span class="section-tag" style="background: rgba(255,255,255,0.2); color: #fff;">Alcance Geográfico</span>
+          <h2>Trabajamos en Todo el País</h2>
+          <p>
+            Contamos con la logística necesaria para trasladar nuestras maquinarias y cuadrillas a cualquier punto del Paraguay, atendiendo proyectos en el Departamento Central, Cordillera, Paraguarí, Caaguazú, San Pedro, Sur del país y Región Occidental (Chaco).
+          </p>
+          <div class="coverage-tags">
+            <span><i class="fa-solid fa-check"></i> Central y Gran Asunción</span>
+            <span><i class="fa-solid fa-check"></i> Cordillera y Paraguarí</span>
+            <span><i class="fa-solid fa-check"></i> Interior — Región Oriental</span>
+            <span><i class="fa-solid fa-check"></i> Bajo y Alto Chaco</span>
+          </div>
+        </div>
+
+        <div class="coverage-box">
+          <i class="fa-solid fa-Map-location-dot"></i>
+          <h3>Base Operativa</h3>
+          <p style="margin-bottom: 12px;"><strong>Luque - Laurelty</strong><br/>Departamento Central, Paraguay</p>
+          <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20quiero%20consultar%20disponibilidad%20para%20un%20trabajo%20en%20mi%20zona." target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Consultar Disponibilidad
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO Y COTIZADOR -->
+  <section id="contacto" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contacto Directo</span>
+        <h2>Solicitá tu Presupuesto sin Compromiso</h2>
+        <p>Escribinos directamente por WhatsApp o completá los datos de tu obra para enviarnos tu consulta detallada al instante.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>ECOMAQ E.A.S.</h3>
+          <p>Atención rápida y personalizada para empresas inmobiliarias, loteadoras, constructoras, productores y propietarios particulares.</p>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp / Teléfono</strong>
+              <span>0992 272 568 (+595 992 272 568)</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Oficina y Base de Equipos</strong>
+              <span>Luque - Laurelty, Paraguay</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-earth-americas"></i>
+            <div>
+              <strong>Zona de Trabajo</strong>
+              <span>Cobertura en todos los departamentos del Paraguay</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20me%20gustar%C3%ADa%20recibir%20asesoramiento%20y%20cotizaci%C3%B3n." target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <i class="fa-brands fa-whatsapp"></i> Abrir Chat en WhatsApp
+          </a>
+        </div>
+
+        <form class="quote-form" id="whatsappForm">
+          <h3>Cotizador Rápido por WhatsApp</h3>
+          <p>Completá los campos y al enviar se abrirá tu WhatsApp con el mensaje listo.</p>
+
+          <div class="form-group">
+            <label for="nombre">Tu Nombre o Empresa</label>
+            <input type="text" id="nombre" placeholder="Ej.: Juan Pérez / Inmobiliaria..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">Tipo de Trabajo Requerido</label>
+            <select id="servicio" required>
+              <option value="Limpieza de terreno / Destronque">Limpieza de terreno / Destronque</option>
+              <option value="Apertura y perfilado de caminos">Apertura y perfilado de caminos</option>
+              <option value="Mantenimiento y poda de loteamiento">Mantenimiento y poda de loteamiento</option>
+              <option value="Movimiento de suelo / Relleno en Tumba">Movimiento de suelo / Relleno en Tumba</option>
+              <option value="Alquiler de Maquinaria (Motoniveladora / Tractor / Tumba)">Alquiler de Maquinaria (Motoniveladora / Tractor / Tumba)</option>
+              <option value="Otro trabajo vial o rural">Otro trabajo vial o rural</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ciudad">Ciudad o Zona de la Obra</label>
+            <input type="text" id="ciudad" placeholder="Ej.: Luque, Capiatá, Altos, Paraguarí..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="detalles">Detalles aproximados (hectáreas, metros de calle, etc.)</label>
+            <textarea id="detalles" rows="3" placeholder="Contanos brevemente qué necesitás realizar..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Consulta a WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="brand">
+          <img src="logo.png" alt="ECOMAQ E.A.S." style="height: 52px; background: #fff; padding: 4px; border-radius: 50%;" />
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">ECOMAQ E.A.S.</strong>
+            <p style="font-size: 0.85rem;">Limpieza de Terrenos, Apertura de Caminos y Maquinaria Pesada</p>
+          </div>
+        </div>
+        <div>
+          <span><i class="fa-solid fa-location-dot"></i> Luque - Laurelty, Paraguay | <i class="fa-brands fa-whatsapp"></i> 0992 272 568</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 ECOMAQ E.A.S. Todos los derechos reservados. Cobertura en todo el Paraguay.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20quisiera%20hacer%20una%20consulta." target="_blank" class="whatsapp-float" title="Escribinos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPTS INTERACTIVOS -->
+  <script>
+    // Menú responsive en móviles
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Envío del formulario directo al WhatsApp 0992272568
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const servicio = document.getElementById('servicio').value;
+      const ciudad = document.getElementById('ciudad').value.trim();
+      const detalles = document.getElementById('detalles').value.trim();
+
+      const texto = `Hola *ECOMAQ E.A.S.*, mi nombre es *${nombre}*.\n\n` +
+                    `Me gustaría solicitar presupuesto para:\n` +
+                    `• *Servicio:* ${servicio}\n` +
+                    `• *Zona/Ciudad:* ${ciudad}\n` +
+                    (detalles ? `• *Detalles:* ${detalles}` : '');
+
+      const url = `https://wa.me/595992272568?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
