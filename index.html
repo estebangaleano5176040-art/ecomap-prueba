@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ECOMAQ E.A.S. | Limpieza de Terrenos, Apertura de Caminos y Maquinaria Vial</title>
-  <meta name="description" content="ECOMAQ E.A.S. - Más de 5 años de experiencia en limpieza de terrenos, apertura de caminos, movimiento de suelo y mantenimiento de loteamientos en todo el Paraguay. Base en Luque, Laurelty." />
+  <meta name="description" content="ECOMAQ E.A.S. - Más de 5 años de experiencia en limpieza de terrenos, apertura de caminos, movimiento de suelo y obras para inmobiliarias y constructoras en todo el Paraguay. Base en Luque, Laurelty." />
   
   <!-- Tipografías Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -340,6 +340,62 @@
       color: var(--green-primary);
     }
 
+    /* FRANJA DE SECTORES ATENDIDOS (INMOBILIARIAS Y CONSTRUCTORAS) */
+    .sectors-strip {
+      background: var(--white);
+      padding: 36px 0;
+      border-bottom: 1px solid #e5ebe3;
+    }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+
+    .sector-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--green-primary);
+    }
+
+    .sector-item:nth-child(even) {
+      border-left-color: var(--brown-primary);
+    }
+
+    .sector-item i {
+      font-size: 1.6rem;
+      color: var(--green-primary);
+      background: var(--green-light);
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sector-item:nth-child(even) i {
+      color: var(--brown-primary);
+      background: #f9efe8;
+    }
+
+    .sector-item h4 {
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .sector-item p {
+      font-size: 0.84rem;
+      color: var(--text-light);
+    }
+
     /* SECCIONES GENERALES */
     section {
       padding: 85px 0;
@@ -348,7 +404,7 @@
     .section-header {
       text-align: center;
       max-width: 720px;
-      margin: 0 auto 55px;
+      margin: 0 auto 45px;
     }
 
     .section-tag {
@@ -372,70 +428,6 @@
     .section-header p {
       color: var(--text-light);
       font-size: 1.02rem;
-    }
-
-    /* CLIENTES / EMPRESAS QUE CONFÍAN */
-    .clients-section {
-      background: var(--white);
-      padding: 55px 0;
-      border-bottom: 1px solid #e5ebe3;
-    }
-
-    .clients-title {
-      text-align: center;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-light);
-      font-weight: 700;
-      margin-bottom: 28px;
-    }
-
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-      gap: 18px;
-      align-items: center;
-    }
-
-    .client-card {
-      background: var(--bg-light);
-      border: 1px solid #e1e8df;
-      border-radius: 12px;
-      padding: 20px 16px;
-      text-align: center;
-      transition: all 0.3s ease;
-      min-height: 92px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .client-card:hover {
-      border-color: var(--green-primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
-    /* Cuando agregues los logos reales, solo descomentás el <img> dentro de cada tarjeta */
-    .client-card img {
-      max-height: 55px;
-      max-width: 140px;
-      object-fit: contain;
-    }
-
-    .client-card i {
-      font-size: 1.4rem;
-      color: var(--brown-primary);
-    }
-
-    .client-card span {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: var(--green-dark);
     }
 
     /* SOBRE NOSOTROS, MISIÓN Y VISIÓN */
@@ -639,14 +631,41 @@
       align-self: flex-start;
     }
 
-    /* TRABAJOS REALIZADOS (PORTAFOLIO) */
+    /* TRABAJOS REALIZADOS (PORTAFOLIO INTERACTIVO) */
     .portfolio-section {
       background: var(--white);
     }
 
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      padding: 10px 22px;
+      border-radius: 50px;
+      border: 1px solid #d5dfd2;
+      background: var(--bg-light);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--green-primary);
+      color: var(--white);
+      border-color: var(--green-primary);
+    }
+
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
       gap: 26px;
     }
 
@@ -656,25 +675,66 @@
       background: var(--bg-light);
       box-shadow: var(--shadow);
       border: 1px solid #e2e8e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .portfolio-img {
-      height: 230px;
-      background-size: cover;
-      background-position: center;
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(24, 34, 22, 0.14);
+    }
+
+    .portfolio-img-wrapper {
+      height: 245px;
+      overflow: hidden;
       position: relative;
+    }
+
+    .portfolio-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .portfolio-card:hover .portfolio-img-wrapper img {
+      transform: scale(1.06);
     }
 
     .portfolio-badge {
       position: absolute;
       top: 14px;
       left: 14px;
-      background: rgba(24, 34, 22, 0.85);
+      background: rgba(24, 34, 22, 0.88);
       color: var(--white);
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 50px;
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .portfolio-badge i {
+      color: var(--accent-gold);
+    }
+
+    .portfolio-zoom {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .portfolio-body {
@@ -682,13 +742,65 @@
     }
 
     .portfolio-body h3 {
-      font-size: 1.15rem;
+      font-size: 1.14rem;
       margin-bottom: 8px;
     }
 
     .portfolio-body p {
       font-size: 0.9rem;
       color: var(--text-light);
+    }
+
+    /* LIGHTBOX MODAL PARA VER FOTOS EN GRANDE */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 22, 14, 0.92);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      flex-direction: column;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 30px;
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 78vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      color: var(--white);
+      margin-top: 16px;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .lightbox-caption h4 {
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
     }
 
     /* COBERTURA NACIONAL */
@@ -973,10 +1085,9 @@
 
       <nav class="nav-links" id="navLinks">
         <a href="#nosotros">Nosotros</a>
-        <a href="#clientes">Clientes</a>
         <a href="#servicios">Servicios</a>
         <a href="#maquinarias">Maquinarias</a>
-        <a href="#trabajos">Trabajos</a>
+        <a href="#trabajos">Trabajos Realizados</a>
         <a href="#cobertura">Cobertura</a>
         <a href="#contacto" class="btn btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> 0992 272 568
@@ -990,18 +1101,18 @@
     <div class="container hero-grid">
       <div>
         <div class="hero-badge">
-          <i class="fa-solid fa-tractor"></i> +5 Años Desarrollando Terrenos y Caminos en todo el Paraguay
+          <i class="fa-solid fa-tractor"></i> +5 Años ejecutando obras para Inmobiliarias y Constructoras
         </div>
         <h1>Potencia y precisión en <span>Limpieza de Terrenos</span> y <span>Apertura de Caminos</span></h1>
         <p>
-          Somos especialistas en preparación de fracciones, movimiento de suelo, perfilado de calles y mantenimiento integral de loteamientos con flota propia de maquinaria vial, tractores y cuadrillas de poda.
+          Somos especialistas en preparación de fracciones, movimiento de suelo, perfilado y consolidación de calles, y mantenimiento integral de propiedades con flota propia de maquinaria vial, tractores y cuadrillas de poda.
         </p>
         <div class="hero-buttons">
           <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo." target="_blank" class="btn btn-whatsapp">
             <i class="fa-brands fa-whatsapp"></i> Solicitar Presupuesto
           </a>
-          <a href="#servicios" class="btn btn-outline">
-            <i class="fa-solid fa-screwdriver-wrench"></i> Ver Nuestros Servicios
+          <a href="#trabajos" class="btn btn-outline">
+            <i class="fa-solid fa-camera"></i> Ver Trabajos Realizados
           </a>
         </div>
 
@@ -1023,10 +1134,10 @@
 
       <div class="hero-card">
         <img src="logo.png" alt="ECOMAQ E.A.S." />
-        <h3>Aliados de Loteadoras, Inmobiliarias y Productores</h3>
-        <p>Ejecutamos obras de principio a fin con cumplimiento estricto de plazos.</p>
+        <h3>Aliados de Inmobiliarias y Constructoras</h3>
+        <p>Ejecutamos obras viales, limpieza de terrenos y desarrollo de loteamientos de principio a fin.</p>
         <ul class="hero-card-list">
-          <li><i class="fa-solid fa-circle-check"></i> Apertura y perfilado de calles en loteamientos</li>
+          <li><i class="fa-solid fa-circle-check"></i> Apertura, perfilado y enripiado de calles</li>
           <li><i class="fa-solid fa-circle-check"></i> Limpieza pesada, destronque y desmalezado</li>
           <li><i class="fa-solid fa-circle-check"></i> Camión tumba, motoniveladora y tractores</li>
           <li><i class="fa-solid fa-circle-check"></i> Cuadrillas de podadores y acoples rotativos</li>
@@ -1038,53 +1149,41 @@
     </div>
   </section>
 
-  <!-- EMPRESAS QUE CONFÍAN EN NOSOTROS -->
-  <section id="clientes" class="clients-section">
-    <div class="container">
-      <p class="clients-title">Importantes empresas e inmobiliarias que confían en nuestro trabajo</p>
-      <div class="clients-grid">
-        <div class="client-card">
-          <!-- Cuando tengas el logo: <img src="logo-nisa.png" alt="NISA Inmobiliaria"> -->
-          <i class="fa-solid fa-building-shield"></i>
-          <span>NISA INMOBILIARIA</span>
+  <!-- FRANJA GENERAL DE SECTORES ATENDIDOS -->
+  <div class="sectors-strip">
+    <div class="container sectors-grid">
+      <div class="sector-item">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <div>
+          <h4>Empresas Inmobiliarias</h4>
+          <p>Apertura de calles, amanzanamiento y mantenimiento de loteamientos.</p>
         </div>
-        <div class="client-card">
-          <!-- <img src="logo-paraguay-propiedades.png" alt="Paraguay Propiedades"> -->
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>PARAGUAY PROPIEDADES</span>
+      </div>
+      <div class="sector-item">
+        <i class="fa-solid fa-helmet-safety"></i>
+        <div>
+          <h4>Empresas Constructoras</h4>
+          <p>Movimiento de suelo, limpieza de predios, nivelación y provisión en tumba.</p>
         </div>
-        <div class="client-card">
-          <!-- <img src="logo-focaris.png" alt="Focaris"> -->
-          <i class="fa-solid fa-city"></i>
-          <span>FOCARIS</span>
-        </div>
-        <div class="client-card">
-          <!-- <img src="logo-jb.png" alt="JB Inmobiliaria"> -->
-          <i class="fa-solid fa-house-chimney"></i>
-          <span>JB INMOBILIARIA</span>
-        </div>
-        <div class="client-card">
-          <!-- <img src="logo-origenes.png" alt="Orígenes Inmobiliaria"> -->
-          <i class="fa-solid fa-tree-city"></i>
-          <span>ORÍGENES INMOBILIARIA</span>
-        </div>
-        <div class="client-card">
-          <!-- <img src="logo-corporacion-terrenos.png" alt="Corporación Terrenos"> -->
-          <i class="fa-solid fa-layer-group"></i>
-          <span>CORPORACIÓN TERRENOS</span>
+      </div>
+      <div class="sector-item">
+        <i class="fa-solid fa-wheat-awn"></i>
+        <div>
+          <h4>Estancias y Particulares</h4>
+          <p>Caminos internos, limpieza de campos, destronque y consolidación vial.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- SOBRE NOSOTROS, MISIÓN Y VISIÓN -->
   <section id="nosotros">
     <div class="container about-grid">
       <div class="about-image">
-        <img src="fondo.jpg" alt="Apertura de caminos y limpieza de loteamientos por ECOMAQ E.A.S." />
+        <img src="image_e4a800.jpg" alt="Apertura de caminos y limpieza de loteamiento en Altos por ECOMAQ E.A.S." />
         <div class="experience-badge">
           <strong>+5 Años</strong>
-          <span>Transformando terrenos en proyectos listos para crecer</span>
+          <span>Trabajando junto a inmobiliarias y constructoras en todo el país</span>
         </div>
       </div>
 
@@ -1092,17 +1191,17 @@
         <span class="section-tag">Sobre ECOMAQ E.A.S.</span>
         <h2>Soluciones viales y de limpieza territorial a la medida de cada obra</h2>
         <p style="margin: 16px 0; color: var(--text-light);">
-          En <strong>ECOMAQ E.A.S.</strong> contamos con más de <strong>5 años de trayectoria</strong> brindando servicios integrales de preparación de suelos, apertura de calles, nivelación y mantenimiento de grandes superficies en todo el territorio nacional.
+          En <strong>ECOMAQ E.A.S.</strong> contamos con más de <strong>5 años de trayectoria</strong> brindando servicios integrales de preparación de suelos, apertura de calles, consolidación pétrea, nivelación y mantenimiento de grandes superficies en todo el territorio nacional.
         </p>
         <p style="color: var(--text-light);">
-          Con base operativa en <strong>Laurelty, Luque</strong>, nos hemos consolidado como el socio estratégico de las principales empresas inmobiliarias y loteadoras del país, garantizando terrenos limpios, caminos perfectamente perfilados y entregas en tiempo y forma.
+          Con base operativa en <strong>Laurelty, Luque</strong>, realizamos trabajos continuos para importantes <strong>empresas inmobiliarias y constructoras</strong> del país, garantizando terrenos limpios, caminos perfectamente perfilados y entregas en tiempo y forma.
         </p>
 
         <div class="mv-cards">
           <div class="mv-card">
             <h3><i class="fa-solid fa-bullseye"></i> Nuestra Misión</h3>
             <p>
-              Proveer servicios eficientes de limpieza de terrenos, movimiento de suelo, apertura vial y mantenimiento de propiedades mediante maquinaria confiable y personal especializado, impulsando el valor y desarrollo de los proyectos inmobiliarios, rurales y urbanos de nuestros clientes.
+              Proveer servicios eficientes de limpieza de terrenos, movimiento de suelo, apertura vial y mantenimiento de propiedades mediante maquinaria confiable y personal especializado, impulsando el valor y desarrollo de los proyectos de inmobiliarias, constructoras y clientes particulares.
             </p>
           </div>
 
@@ -1122,8 +1221,8 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Catálogo de Servicios</span>
-        <h2>Todo lo que tu terreno o loteamiento necesita</h2>
-        <p>Ejecutamos desde la limpieza inicial y el movimiento de suelo hasta la apertura de calles y el mantenimiento periódico de manzanas y lotes.</p>
+        <h2>Todo lo que tu terreno o proyecto vial necesita</h2>
+        <p>Ejecutamos desde la limpieza inicial y el movimiento de suelo hasta la apertura, estabilizado de calles y mantenimiento periódico de fracciones.</p>
       </div>
 
       <div class="services-grid">
@@ -1135,20 +1234,20 @@
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-road"></i></div>
-          <h3>Apertura y Perfilado de Caminos</h3>
-          <p>Trazado, apertura, abovedado, perfilado y compactación de calles para loteamientos, caminos vecinales y accesos internos de estancias o industrias.</p>
+          <h3>Apertura, Perfilado y Enripiado de Caminos</h3>
+          <p>Trazado, apertura, abovedado, colocación de base pétrea y compactación de calles para loteamientos, constructoras y accesos rurales.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-mound"></i></div>
           <h3>Movimiento de Suelo y Nivelación</h3>
-          <p>Relleno, terraplenado, desmonte, nivelación de terrenos y emparejamiento de cotas para proyectos habitacionales, comerciales o industriales.</p>
+          <p>Relleno, terraplenado, desmonte, nivelación de terrenos y emparejamiento de cotas para obras civiles, habitacionales o industriales.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
           <h3>Poda y Mantenimiento de Loteamientos</h3>
-          <p>Corte de pasto extensivo con acoples de tractor y terminación detallada con cuadrillas de podadores personales para mantener las fracciones impecables para la venta.</p>
+          <p>Corte de pasto extensivo con acoples de tractor y terminación detallada con cuadrillas de podadores personales para mantener las fracciones impecables.</p>
         </div>
 
         <div class="service-card">
@@ -1158,9 +1257,9 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-truck-Ramp-box"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
           <h3>Provisión de Materiales y Alquiler</h3>
-          <p>Transporte y provisión de tierra de relleno, tosca, arena y piedra triturada en camión tumba, además de alquiler de equipos por hora o por proyecto.</p>
+          <p>Transporte y provisión de tierra de relleno, tosca, piedra bruta/triturada y arena en camión tumba, además de alquiler de equipos por proyecto.</p>
         </div>
       </div>
     </div>
@@ -1172,7 +1271,7 @@
       <div class="section-header">
         <span class="section-tag">Flota y Equipamiento</span>
         <h2>Maquinarias y Equipos que Manejamos</h2>
-        <p>Combinamos maquinaria pesada de alto rendimiento con equipos de terminación manual para cubrir cada etapa del trabajo en campo.</p>
+        <p>Combinamos maquinaria pesada de alto rendimiento con cuadrillas operativas en campo para cubrir cada etapa de la obra.</p>
       </div>
 
       <div class="fleet-grid">
@@ -1204,7 +1303,7 @@
               <i class="fa-solid fa-truck-pickup"></i>
               <h3>Camión Tumba</h3>
             </div>
-            <p>Transporte ágil de relleno, tosca, arena, ripio y retiro de maleza, troncos o escombros resultantes de la limpieza del predio.</p>
+            <p>Transporte ágil de piedra, relleno, tosca, arena y retiro de maleza, troncos o escombros resultantes de la limpieza del predio.</p>
           </div>
           <span class="fleet-tag">Transporte y Relleno</span>
         </div>
@@ -1224,9 +1323,9 @@
           <div>
             <div class="fleet-header">
               <i class="fa-solid fa-person-digging"></i>
-              <h3>Equipos de Podadores Personales</h3>
+              <h3>Equipos de Podadores y Cuadrilla Vial</h3>
             </div>
-            <p>Cuadrilla equipada con desmalezadoras manuales y herramientas de poda para perfilado de bordes, esquinas, amojonamientos y zonas de detalle.</p>
+            <p>Personal equipado con desmalezadoras manuales y herramientas viales para perfilado de bordes, colocación de piedra y terminaciones en obra.</p>
           </div>
           <span class="fleet-tag">Terminación Detallada</span>
         </div>
@@ -1245,48 +1344,113 @@
     </div>
   </section>
 
-  <!-- TRABAJOS REALIZADOS -->
+  <!-- TRABAJOS REALIZADOS (PORTAFOLIO CON FOTOS DE SAN PEDRO Y ALTOS) -->
   <section id="trabajos" class="portfolio-section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Nuestro Portafolio</span>
         <h2>Trabajos Realizados</h2>
-        <p>Conocé la calidad de terminación en nuestras aperturas de calles, desarrollos de fracciones y limpiezas integrales.</p>
+        <p>Obras reales de apertura de calles, consolidación con base pétrea y limpieza integral de fracciones ejecutadas para inmobiliarias y constructoras.</p>
+      </div>
+
+      <!-- Botones de filtro por zona -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="todos">Todos los Trabajos</button>
+        <button class="filter-btn" data-filter="altos">Obras en Altos</button>
+        <button class="filter-btn" data-filter="san-pedro">Obras en San Pedro</button>
       </div>
 
       <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <div class="portfolio-img" style="background-image: url('fondo.jpg');">
-            <span class="portfolio-badge">Loteamientos e Inmobiliarias</span>
+        <!-- TRABAJO EN ALTOS (image_e4a800.jpg) -->
+        <div class="portfolio-card" data-category="altos" onclick="openLightbox('image_e4a800.jpg', 'Apertura de Calles y Limpieza de Loteamiento — Altos', 'Trazado y perfilado de calles internas de tierra roja y desmalezado integral de manzanas en la ciudad de Altos.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e4a800.jpg" alt="Trabajo de apertura de caminos y limpieza en Altos" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> Altos, Cordillera</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </div>
           <div class="portfolio-body">
-            <h3>Apertura de Calles y Limpieza de Manzanas</h3>
-            <p>Trazado y perfilado de arterias internas con motoniveladora y mantenimiento integral de manzanas mediante tractor con rotativa y cuadrilla.</p>
+            <h3>Apertura de Calles y Limpieza de Manzanas — Altos</h3>
+            <p>Conformación de cuadrícula vial, perfilado de arterias con motoniveladora y limpieza completa de lotes mediante tractor con rotativa.</p>
           </div>
         </div>
 
-        <div class="portfolio-card">
-          <div class="portfolio-img" style="background-image: linear-gradient(rgba(30,61,25,0.25), rgba(30,61,25,0.45)), url('fondo.jpg'); background-position: left center;">
-            <span class="portfolio-badge">Vialidad y Suelos</span>
+        <!-- TRABAJO EN SAN PEDRO 1 (image_e45687.jpg) -->
+        <div class="portfolio-card" data-category="san-pedro" onclick="openLightbox('image_e45687.jpg', 'Apertura de Avenida Principal e Intersecciones — San Pedro', 'Vista aérea del trazado vial, desmonte selectivo y apertura de calles transversales en el Departamento de San Pedro.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e45687.jpg" alt="Vista aérea de apertura de calles e intersecciones en San Pedro" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> San Pedro</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </div>
           <div class="portfolio-body">
-            <h3>Nivelación, Cuneteado y Mejoramiento Vial</h3>
-            <p>Conformación de pendiente, desagües laterales y compactación de caminos para garantizar el acceso permanente en días de lluvia.</p>
+            <h3>Apertura de Avenida Principal y Cruces — San Pedro</h3>
+            <p>Habilitación de trazado vial desde cero, despeje de franja de dominio y apertura de calles transversales para desarrollo inmobiliario.</p>
           </div>
         </div>
 
-        <div class="portfolio-card">
-          <div class="portfolio-img" style="background-image: linear-gradient(rgba(124,58,16,0.25), rgba(124,58,16,0.45)), url('fondo.jpg'); background-position: right bottom;">
-            <span class="portfolio-badge">Mantenimiento Continuo</span>
+        <!-- TRABAJO EN SAN PEDRO 2 (image_e45682.jpg) -->
+        <div class="portfolio-card" data-category="san-pedro" onclick="openLightbox('image_e45682.jpg', 'Conexión Vial y Desarrollo de Fracción — San Pedro', 'Vista panorámica de la arteria abierta conectando la propiedad con la ruta principal en San Pedro.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e45682.jpg" alt="Vista panorámica de apertura de camino en San Pedro" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> San Pedro</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </div>
           <div class="portfolio-body">
-            <h3>Limpieza y Poda de Fracciones Comerciales</h3>
-            <p>Puesta a punto de terrenos para exhibición y venta junto a las principales desarrolladoras inmobiliarias del país.</p>
+            <h3>Trazado de Acceso Principal — San Pedro</h3>
+            <p>Apertura longitudinal de gran extensión integrando los sectores del inmueble con acceso directo para vehículos y maquinaria.</p>
+          </div>
+        </div>
+
+        <!-- TRABAJO EN SAN PEDRO 3 (image_e45647.jpg) -->
+        <div class="portfolio-card" data-category="san-pedro" onclick="openLightbox('image_e45647.jpg', 'Estabilizado y Base Pétrea en Calzada — San Pedro', 'Vista cenital de los trabajos de colocación de piedra para consolidación de paso vehicular en San Pedro.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e45647.jpg" alt="Vista aérea cenital de colocación de piedra en camino de San Pedro" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> San Pedro</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Consolidación con Base Pétrea — San Pedro</h3>
+            <p>Provisión y tendido de piedra sobre la calzada abierta para asegurar la transitabilidad permanente en zonas de suelo exigente.</p>
+          </div>
+        </div>
+
+        <!-- TRABAJO EN SAN PEDRO 4 (image_e45661.jpg) -->
+        <div class="portfolio-card" data-category="san-pedro" onclick="openLightbox('image_e45661.jpg', 'Cuadrilla en Obra Vial y Empedrado — San Pedro', 'Personal operativo realizando el acomodado manual y perfilado de base de piedra en camino interno de San Pedro.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e45661.jpg" alt="Cuadrilla trabajando en estabilizado de camino en San Pedro" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> San Pedro</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Conformación de Calzada y Empedrado — San Pedro</h3>
+            <p>Despliegue de cuadrilla vial y logística propia para la nivelación y calzado manual de piedra en los carriles de circulación.</p>
+          </div>
+        </div>
+
+        <!-- TRABAJO EN SAN PEDRO 5 (image_e45668.jpg) -->
+        <div class="portfolio-card" data-category="san-pedro" onclick="openLightbox('image_e45668.jpg', 'Terminación y Refuerzo Estructural de Camino — San Pedro', 'Detalle del empedrado rústico y refuerzo de subrasante ejecutado en San Pedro.')">
+          <div class="portfolio-img-wrapper">
+            <img src="image_e45668.jpg" alt="Detalle de colocación de piedra en camino en San Pedro" />
+            <span class="portfolio-badge"><i class="fa-solid fa-location-dot"></i> San Pedro</span>
+            <span class="portfolio-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Refuerzo Estructural de Camino — San Pedro</h3>
+            <p>Trabajos de precisión en el asentamiento de material pétreo sobre terreno perfilado, garantizando durabilidad ante lluvias y tránsito pesado.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- VISOR DE IMÁGENES PANTALLA COMPLETA (LIGHTBOX) -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+    <img id="lightboxImg" src="" alt="Vista ampliada del trabajo realizado" />
+    <div class="lightbox-caption">
+      <h4 id="lightboxTitle"></h4>
+      <p id="lightboxDesc"></p>
+    </div>
+  </div>
 
   <!-- ZONAS DE COBERTURA -->
   <section id="cobertura">
@@ -1296,18 +1460,18 @@
           <span class="section-tag" style="background: rgba(255,255,255,0.2); color: #fff;">Alcance Geográfico</span>
           <h2>Trabajamos en Todo el País</h2>
           <p>
-            Contamos con la logística necesaria para trasladar nuestras maquinarias y cuadrillas a cualquier punto del Paraguay, atendiendo proyectos en el Departamento Central, Cordillera, Paraguarí, Caaguazú, San Pedro, Sur del país y Región Occidental (Chaco).
+            Contamos con la logística necesaria para trasladar nuestras maquinarias y cuadrillas a cualquier punto del Paraguay, ejecutando proyectos en Central, Cordillera (Altos, Atyrá, Emboscada), San Pedro, Paraguarí, Caaguazú, Sur del país y Región Occidental (Chaco).
           </p>
           <div class="coverage-tags">
             <span><i class="fa-solid fa-check"></i> Central y Gran Asunción</span>
-            <span><i class="fa-solid fa-check"></i> Cordillera y Paraguarí</span>
-            <span><i class="fa-solid fa-check"></i> Interior — Región Oriental</span>
-            <span><i class="fa-solid fa-check"></i> Bajo y Alto Chaco</span>
+            <span><i class="fa-solid fa-check"></i> Cordillera (Altos) y Paraguarí</span>
+            <span><i class="fa-solid fa-check"></i> San Pedro y Norte del País</span>
+            <span><i class="fa-solid fa-check"></i> Interior y Región Occidental</span>
           </div>
         </div>
 
         <div class="coverage-box">
-          <i class="fa-solid fa-Map-location-dot"></i>
+          <i class="fa-solid fa-map-location-dot"></i>
           <h3>Base Operativa</h3>
           <p style="margin-bottom: 12px;"><strong>Luque - Laurelty</strong><br/>Departamento Central, Paraguay</p>
           <a href="https://wa.me/595992272568?text=Hola%20ECOMAQ%2C%20quiero%20consultar%20disponibilidad%20para%20un%20trabajo%20en%20mi%20zona." target="_blank" class="btn btn-whatsapp">
@@ -1330,7 +1494,7 @@
       <div class="contact-grid">
         <div class="contact-info-card">
           <h3>ECOMAQ E.A.S.</h3>
-          <p>Atención rápida y personalizada para empresas inmobiliarias, loteadoras, constructoras, productores y propietarios particulares.</p>
+          <p>Atención rápida y personalizada para empresas inmobiliarias, constructoras, desarrolladores de loteamientos, productores y propietarios particulares.</p>
 
           <div class="contact-item">
             <i class="fa-brands fa-whatsapp"></i>
@@ -1366,15 +1530,15 @@
           <p>Completá los campos y al enviar se abrirá tu WhatsApp con el mensaje listo.</p>
 
           <div class="form-group">
-            <label for="nombre">Tu Nombre o Empresa</label>
-            <input type="text" id="nombre" placeholder="Ej.: Juan Pérez / Inmobiliaria..." required />
+            <label for="nombre">Tu Nombre, Inmobiliaria o Constructora</label>
+            <input type="text" id="nombre" placeholder="Ej.: Ing. Juan Pérez / Constructora..." required />
           </div>
 
           <div class="form-group">
             <label for="servicio">Tipo de Trabajo Requerido</label>
             <select id="servicio" required>
               <option value="Limpieza de terreno / Destronque">Limpieza de terreno / Destronque</option>
-              <option value="Apertura y perfilado de caminos">Apertura y perfilado de caminos</option>
+              <option value="Apertura, perfilado o enripiado de caminos">Apertura, perfilado o enripiado de caminos</option>
               <option value="Mantenimiento y poda de loteamiento">Mantenimiento y poda de loteamiento</option>
               <option value="Movimiento de suelo / Relleno en Tumba">Movimiento de suelo / Relleno en Tumba</option>
               <option value="Alquiler de Maquinaria (Motoniveladora / Tractor / Tumba)">Alquiler de Maquinaria (Motoniveladora / Tractor / Tumba)</option>
@@ -1384,7 +1548,7 @@
 
           <div class="form-group">
             <label for="ciudad">Ciudad o Zona de la Obra</label>
-            <input type="text" id="ciudad" placeholder="Ej.: Luque, Capiatá, Altos, Paraguarí..." required />
+            <input type="text" id="ciudad" placeholder="Ej.: Luque, Altos, San Pedro, Paraguarí..." required />
           </div>
 
           <div class="form-group">
@@ -1408,7 +1572,7 @@
           <img src="logo.png" alt="ECOMAQ E.A.S." style="height: 52px; background: #fff; padding: 4px; border-radius: 50%;" />
           <div>
             <strong style="color: #fff; font-size: 1.1rem;">ECOMAQ E.A.S.</strong>
-            <p style="font-size: 0.85rem;">Limpieza de Terrenos, Apertura de Caminos y Maquinaria Pesada</p>
+            <p style="font-size: 0.85rem;">Limpieza de Terrenos, Apertura de Caminos y Servicios para Inmobiliarias y Constructoras</p>
           </div>
         </div>
         <div>
@@ -1435,6 +1599,38 @@
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // Filtro interactivo de Trabajos Realizados (Todos / Altos / San Pedro)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        portfolioCards.forEach(card => {
+          if (filter === 'todos' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Visor Lightbox para ampliar las fotos de obras
+    function openLightbox(src, title, desc) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxTitle').textContent = title;
+      document.getElementById('lightboxDesc').textContent = desc;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
 
     // Envío del formulario directo al WhatsApp 0992272568
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
